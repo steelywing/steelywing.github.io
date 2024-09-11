@@ -1,0 +1,101 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>百家樂（Baccarat）牌例練習程式 - Steely Wing</title>
+  <meta name="description" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <script type="module" crossorigin src="../assets/index-Di8lT3M0.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/style-BRphVbrH.js">
+  <link rel="stylesheet" crossorigin href="../assets/style-BRhUiNYe.css">
+</head>
+
+<body class="bg-[#fc6] pb-8">
+  <div class="bg-orange-600/80 text-white text-4xl text-center p-8 w-full">
+    百家樂 牌例練習
+  </div>
+  <div class="text-center p-8 w-full text-blue-600">
+    <a class="px-4 py-1 rounded-full bg-blue-200 border-2 border-blue-600" href="https://steelywing.github.io/">Steely Wing Blog</a>
+  </div>
+  <div class="grid w-full place-items-center">
+    <div id="flash"></div>
+  </div>
+  <br>
+    <div class="text-center max-w-screen-lg mx-auto w-fit bg-orange-100 p-0 border-4 border-orange-400">
+    <div>
+      <h3 class="bg-orange-200 p-4 text-2xl border-2 border-orange-300">
+        牌例說明 <i class="fa fa-caret-down"></i>
+      </h3>
+    </div>
+
+    <table class="w-full text-center">
+      <thead class="[&_*]:border-2 [&_*]:border-orange-300 [&_th]:p-2">
+        <tr>
+          <th>點數</th>
+          <th>閒</th>
+          <th>庄</th>
+        </tr>
+      </thead>
+      <tbody class="[&_td]:border-2 [&_td]:border-orange-300 [&_td]:px-4 [&_td]:py-1">
+        <tr>
+          <td>0</td>
+          <td rowspan="6">
+            <span class="label label-success">需要博牌</span>
+          </td>
+          <td rowspan="3">
+            <span class="label label-success">需要博牌</span>
+          </td>
+        </tr>
+        <tr>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>如果閒博得 8，庄 <span class="label label-danger">不需要博牌</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>如果閒博得 2、3、4、5、6、7，庄 <span class="label label-success">需要博牌</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>如果閒博得 4、5、6、7，庄 <span class="label label-success">需要博牌</span></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td rowspan="2">
+            <span class="label label-danger">
+              不需要博牌
+            </span>
+          </td>
+          <td>如果閒博得 6、7，庄 <span class="label label-success">需要博牌</span></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><span class="label label-danger">不需要博牌</span></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td rowspan="2" colspan="2">例牌，庄閒都 <span class="label label-danger">不需要博牌</span></td>
+        </tr>
+        <tr>
+          <td>9</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
+  <!-- Self hosted -->
+  <!-- <script src="../js/ruffle/ruffle.js"></script> -->
+
+</html>
