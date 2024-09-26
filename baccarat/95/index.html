@@ -9,12 +9,15 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
-  <script type="module" crossorigin src="../assets/index--np8JChG.js"></script>
-  <link rel="modulepreload" crossorigin href="../assets/index-B4Thi6U0.js">
-  <link rel="stylesheet" crossorigin href="../assets/index-BVmdj3Rm.css">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+  <script type="module" crossorigin src="/baccarat/assets/index-D--I0mSm.js"></script>
+  <link rel="modulepreload" crossorigin href="/baccarat/assets/nav-BTu9owqj.js">
+  <link rel="stylesheet" crossorigin href="/baccarat/assets/nav-CydSNmKr.css">
 </head>
 
-<body class="bg-[#fc6] pb-8 dark">
+<body x-data="data" class="bg-blue-900 dark select-none">
 
   <nav class="bg-white border-gray-200 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -26,8 +29,8 @@
       </a>
       <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
         <!-- <button type="button"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get
-              started</button> -->
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get
+                  started</button> -->
         <button data-collapse-toggle="navbar-sticky" type="button"
           class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-sticky" aria-expanded="false">
@@ -42,40 +45,105 @@
         <ul
           class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <!-- <li>
-                <a href="/"
-                  class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">
-                  Steely Wing Blog
-                </a>
-              </li> -->
-          <li>
-            <a href="../rule/"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+            <a href="/"
+              class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+              aria-current="page">
+              Steely Wing Blog
+            </a>
+          </li> -->
+          <template x-data="nav" x-for="nav in navs">
+            <li>
+              <a :href="nav.href"
+                x-text="nav.name"
+                class="block py-2 px-3 rounded"
+                :class="nav.href == location.pathname ? 
+                  'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500' : 
+                  'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'">
+              </a>
+            </li>
+          </template>
+          <!-- <li>
+            <a href="/baccarat/rule/"
+              class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
               百家樂 牌例練習
             </a>
           </li>
           <li>
-            <a href="../95/"
-              class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">
+            <a href="/baccarat/95/"
+              class="block py-2 px-3 rounded text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+              aria-current="page">
               百家樂 95 數練習
             </a>
           </li>
+          <li>
+            <a href="/baccarat/95-flash/"
+              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+              百家樂 95 數練習 (Flash 版)
+            </a>
+          </li> -->
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- <div class="bg-orange-600/80 text-white text-4xl text-center p-8 w-full">
-    百家樂 95 數練習
+  <!-- <div class="bg-orange-600/80 text-white text-4xl text-center p-8 mb-8 w-full">
+    百家樂 95 數 - 練習程式
   </div> -->
-  <!-- <div class="text-center p-8 w-full text-blue-600">
-    <a class="px-4 py-1 rounded-full bg-blue-200 border-2 border-blue-600" href="https://steelywing.github.io/">Steely
-      Wing Blog</a>
-  </div> -->
-  <div class="grid w-full place-items-center mt-8">
-    <div id="flash" class="text-center">
-      <span class="loader"></span>
+  <div x-cloak
+    class="flex flex-row *:flex-1 *:overflow-hidden *:rounded-2xl *:h-32 *:border-4 text-center p-8 max-w-screen-sm mx-auto gap-8">
+    <div class="bg-blue-400/60 border-blue-200/60 flex flex-col gap-1 justify-center items-center">
+      <div class="text-black/40">庄數</div>
+      <div x-text="banker" class="text-4xl text-blue-900">1</div>
+    </div>
+    <div :class="wrong ?
+      'bg-red-400/60 border-red-200/60' :
+      'bg-blue-400/60 border-blue-200/60'" @click.prevent="showAnswer()"
+      class="touch-none cursor-pointer flex flex-col justify-center items-center transition duration-500">
+      <div class="text-white/60 bg-black/40 rounded-md w-fit px-2">顯示答案</div>
+      <span x-text="(wrong ? '❌' : '') + (correct ? '✅' : '')" class="absolute text-4xl"></span>
+      <div class="text-black/60 w-fit">
+        95 數
+      </div>
+      <div x-text="input || '&nbsp;'" class="text-4xl" :class="wrong ? 'text-red-900' : 'text-blue-900'">
+        095
+      </div>
     </div>
   </div>
+
+  <!-- input key board -->
+  <div x-cloak class="flex flex-row flex-wrap place-content-center px-16 max-w-screen-sm mx-auto gap-0">
+    <template x-for="i in 9">
+      <div class="px-2 py-2 basis-[30%]">
+        <div @touchstart.prevent="press(i)" @click.prevent="press(i)" x-text="i"
+          class="touch-none cursor-pointer bg-lime-400/60 border-lime-800/60 border-4 px-2 py-4 rounded-2xl text-center text-2xl">
+        </div>
+      </div>
+    </template>
+    <div class="px-2 py-2 basis-2/3">
+      <div @touchstart.prevent="press(0)" @click.prevent="press(0)" x-text="0"
+        class="touch-none cursor-pointer bg-lime-400/60 border-lime-800/60 border-4 px-2 py-4 rounded-2xl text-center text-2xl">
+      </div>
+    </div>
+    <div class="px-2 py-2 basis-1/3">
+      <div @touchstart.prevent="backSpace()" @click.prevent="backSpace()"
+        class="touch-none cursor-pointer bg-lime-400/60 border-lime-800/60 border-4 px-2 py-4 rounded-2xl text-center text-2xl">
+        ⬅️
+      </div>
+    </div>
+    <div class="p-4 basis-1/2">
+      <div @click="clear()"
+        class="touch-none cursor-pointer bg-red-400/80 border-red-800/60 border-4 p-4 rounded-2xl text-center">
+        清除
+      </div>
+    </div>
+    <div class="p-4 basis-1/2">
+      <div @click="enter()"
+        class="touch-none cursor-pointer bg-lime-400/80 border-lime-800/60 border-4 p-4 rounded-2xl text-center">
+        輸入
+      </div>
+    </div>
+  </div>
+
   <br>
   <div class="text-center max-w-screen-lg mx-auto w-fit bg-orange-100 p-1 border-2 border-orange-400">
     <div>
@@ -85,7 +153,12 @@
     </div>
     <div>
       <div class="p-2">
-        答案不需輸入結尾的 0 及小數點，例如：
+        <p>
+          可用鍵盤輸入答案，輸入後按輸入鍵即可。
+        </p>
+        <p>
+          答案不需輸入結尾的 0 及小數點，例如：
+        </p>
         <table class="w-full text-center mt-4">
           <thead>
             <tr>
@@ -94,6 +167,10 @@
             </tr>
           </thead>
           <tbody class="*:border-t-2 *:border-orange-300">
+            <tr>
+              <td>1</td>
+              <td>095</td>
+            </tr>
             <tr>
               <td>4</td>
               <td>38</td>
@@ -112,10 +189,6 @@
     </div>
   </div>
 
-  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-
-  <!-- Self hosted -->
-  <!-- <script src="../js/ruffle/ruffle.js"></script> -->
 </body>
 
 </html>
