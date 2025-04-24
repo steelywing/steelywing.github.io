@@ -12,9 +12,9 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
-  <script type="module" crossorigin src="/baccarat/assets/index-D-V1ZhxQ.js"></script>
-  <link rel="modulepreload" crossorigin href="/baccarat/assets/nav-BB43IXkj.js">
-  <link rel="stylesheet" crossorigin href="/baccarat/assets/nav-BoUWLLF3.css">
+  <script type="module" crossorigin src="/baccarat/assets/index-Bxay2T2p.js"></script>
+  <link rel="modulepreload" crossorigin href="/baccarat/assets/nav-CQ7ephTc.js">
+  <link rel="stylesheet" crossorigin href="/baccarat/assets/nav-DnpcecVg.css">
 </head>
 
 <body x-data="data" class="bg-blue-900 dark select-none">
@@ -88,7 +88,7 @@
     百家樂 95 數 - 練習程式
   </div> -->
   <div x-cloak
-    class="flex flex-row *:flex-1 *:overflow-hidden *:rounded-2xl *:h-32 *:border-4 text-center p-8 max-w-screen-sm mx-auto gap-8">
+    class="flex flex-row *:flex-1 *:overflow-hidden *:rounded-2xl *:h-32 *:border-4 text-center px-4 py-4 min-w-[300px] max-w-[400px] mx-auto gap-8">
     <div class="bg-blue-400/60 border-blue-200/60 flex flex-col gap-1 justify-center items-center">
       <div class="text-black/40">庄數</div>
       <div x-text="banker" class="text-4xl text-blue-900">1</div>
@@ -100,8 +100,8 @@
       <div class="text-white/60 bg-black/40 rounded-md w-fit px-2">顯示答案</div>
 
       <!-- correct icon -->
-      <svg x-show="correct" x-transition.duration.400ms xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      <svg x-show="correct" x-transition.duration.400ms xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
         class="absolute w-24 h-24 stroke-lime-800 fill-lime-300">
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
@@ -109,8 +109,8 @@
       </svg>
 
       <!-- wrong icon -->
-      <svg x-show="wrong" x-transition.duration.400ms xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      <svg x-show="wrong" x-transition.duration.400ms xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
         class="absolute w-24 h-24 stroke-red-800 fill-red-300">
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
@@ -128,20 +128,20 @@
   </div>
 
   <!-- input key board -->
-  <div x-cloak class="flex flex-row flex-wrap place-content-center mx-auto gap-0 min-w-[300px] max-w-[400px]">
+  <div x-cloak class="grid grid-flow-row grid-cols-3 place-content-center mx-auto gap-2 px-4 py-4 min-w-[300px] max-w-[400px]">
     <template x-for="i in 9">
-      <div class="px-2 py-2 basis-[30%]">
+      <div class="">
         <div @touchstart.prevent="press(i)" @click.prevent="press(i)" x-text="i"
           class="touch-none cursor-pointer bg-lime-400/60 border-lime-800/60 border-4 px-2 py-4 rounded-2xl text-center text-2xl">
         </div>
       </div>
     </template>
-    <div class="px-2 py-2 basis-[60%]">
+    <div class="col-span-2">
       <div @touchstart.prevent="press(0)" @click.prevent="press(0)" x-text="0"
         class="touch-none cursor-pointer bg-lime-400/60 border-lime-800/60 border-4 px-2 py-4 rounded-2xl text-center text-2xl">
       </div>
     </div>
-    <div class="px-2 py-2 basis-[30%]">
+    <div class="">
       <div @touchstart.prevent="backSpace()" @click.prevent="backSpace()"
         class="touch-none cursor-pointer flex justify-center items-center bg-lime-400/60 border-lime-800/60 border-4 p-0 rounded-2xl text-center text-2xl h-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -152,19 +152,18 @@
         </svg>
       </div>
     </div>
-    <div class="p-2 basis-1/2">
+    <div class="my-4">
       <div @touchstart.prevent="clear()" @click.prevent="clear()"
         class="touch-none cursor-pointer flex justify-center items-center bg-red-400/80 border-red-800/60 border-4 p-0 rounded-2xl text-center text-2xl h-24">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="stroke-red-800 fill-red-200 h-12 block">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" class="stroke-red-800 fill-red-200 h-12 block">
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z" />
           <path d="M9 9l6 6m0 -6l-6 6" />
         </svg>
       </div>
     </div>
-    <div class="p-2 basis-1/2">
+    <div class="col-span-2 my-4">
       <div @touchstart.prevent="enter()" @click.prevent="enter()"
         class="touch-none cursor-pointer flex justify-center items-center bg-lime-400/60 border-lime-800/60 border-4 p-0 rounded-2xl text-center text-2xl h-full">
         Enter
