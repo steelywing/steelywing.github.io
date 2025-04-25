@@ -12,9 +12,9 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
-  <script type="module" crossorigin src="/baccarat/assets/index-Bxay2T2p.js"></script>
-  <link rel="modulepreload" crossorigin href="/baccarat/assets/nav-CQ7ephTc.js">
-  <link rel="stylesheet" crossorigin href="/baccarat/assets/nav-DnpcecVg.css">
+  <script type="module" crossorigin src="/baccarat/assets/index-iC0PSziU.js"></script>
+  <link rel="modulepreload" crossorigin href="/baccarat/assets/nav-CjGYuJjn.js">
+  <link rel="stylesheet" crossorigin href="/baccarat/assets/nav-sTzrvCra.css">
 </head>
 
 <body x-data="data" class="bg-blue-900 dark select-none">
@@ -87,6 +87,9 @@
   <!-- <div class="bg-orange-600/80 text-white text-4xl text-center p-8 mb-8 w-full">
     百家樂 95 數 - 練習程式
   </div> -->
+  <div x-on:click="dialog.show()" class="absolute right-0 bg-slate-600/80 text-white text-2xl text-center px-2 py-2">
+    ❓
+  </div>
   <div x-cloak
     class="flex flex-row *:flex-1 *:overflow-hidden *:rounded-2xl *:h-32 *:border-4 text-center px-4 py-4 min-w-[300px] max-w-[400px] mx-auto gap-8">
     <div class="bg-blue-400/60 border-blue-200/60 flex flex-col gap-1 justify-center items-center">
@@ -128,8 +131,9 @@
   </div>
 
   <!-- input key board -->
-  <div x-cloak class="grid grid-flow-row grid-cols-3 place-content-center mx-auto gap-2 px-4 py-4 min-w-[300px] max-w-[400px]">
-    <template x-for="i in 9">
+  <div x-cloak
+    class="grid grid-flow-row grid-cols-3 place-content-center mx-auto gap-2 px-4 py-4 min-w-[300px] max-w-[400px]">
+    <template x-for="i in [7, 8, 9, 4, 5, 6, 1, 2, 3]">
       <div class="">
         <div @touchstart.prevent="press(i)" @click.prevent="press(i)" x-text="i"
           class="touch-none cursor-pointer bg-lime-400/60 border-lime-800/60 border-4 px-2 py-4 rounded-2xl text-center text-2xl">
@@ -172,46 +176,50 @@
   </div>
 
   <br>
-  <div class="text-center max-w-screen-lg mx-auto w-fit bg-orange-100 p-1 border-2 border-orange-400">
-    <div>
-      <h3 class="bg-orange-200 p-4 text-2xl">
-        使用說明 <i class="fa fa-caret-down"></i>
-      </h3>
-    </div>
-    <div>
-      <div class="p-2">
-        <p>
-          可用鍵盤輸入答案，輸入後按 Enter 即可。
-        </p>
-        <p>
-          答案不需輸入後面的 0 及小數點，例如：
-        </p>
-        <table class="w-full text-center mt-4">
-          <thead>
-            <tr>
-              <th>庄數</th>
-              <th>答案</th>
-            </tr>
-          </thead>
-          <tbody class="*:border-t-2 *:border-orange-300">
-            <tr>
-              <td>1</td>
-              <td>095</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>38</td>
-            </tr>
-            <tr>
-              <td>12</td>
-              <td>114</td>
-            </tr>
-            <tr>
-              <td>35</td>
-              <td>3325</td>
-            </tr>
-          </tbody>
-        </table>
+  <div id="help" class="dialog-container" aria-hidden="true">
+    <div class="dialog-overlay" data-a11y-dialog-hide></div>
+    <div role="document" class="dialog-content text-center max-w-screen-lg mx-auto w-fit bg-orange-100 p-1 border-2 border-orange-400">
+      <div>
+        <h3 class="bg-orange-200 p-4 text-2xl">
+          使用說明 <i class="fa fa-caret-down"></i>
+          <span class="absolute right-4 cursor-pointer" x-on:click="dialog.hide()">❌</span>
+        </h3>
+      </div>
+      <div>
+        <div class="p-2">
+          <p>
+            可用鍵盤輸入答案，輸入後按 Enter 即可。
+          </p>
+          <p>
+            答案不需輸入後面的 0 及小數點，例如：
+          </p>
+          <table class="w-full text-center mt-4">
+            <thead>
+              <tr>
+                <th>庄數</th>
+                <th>答案</th>
+              </tr>
+            </thead>
+            <tbody class="*:border-t-2 *:border-orange-300">
+              <tr>
+                <td>1</td>
+                <td>095</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>38</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>114</td>
+              </tr>
+              <tr>
+                <td>35</td>
+                <td>3325</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
